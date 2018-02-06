@@ -259,7 +259,7 @@ try:
         exit_code = nagios.critical
         exit_message = 'unable to retrieve url: "%s"' % uri
     except TimeoutException, ex:
-        exit_code = nagios.warning
+        exit_code = nagios.critical;
         exit_message = 'timeout in %s seconds trying to retrieve url: "%s"' % (options.timeout, uri)
 finally:
     signal.alarm(0) # disable alarm
